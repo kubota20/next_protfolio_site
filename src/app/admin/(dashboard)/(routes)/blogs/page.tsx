@@ -1,9 +1,8 @@
 import { format } from "date-fns";
 import Container from "@/components/ui/container";
-// import prismadb from "@/lib/prismadb";
+import prismadb from "@/lib/prismadb";
 import { BlogClient } from "./components/client";
-import { PrismaClient } from "@prisma/client";
-const prismadb = new PrismaClient();
+
 const BlogsPage = async () => {
   const catedories = await prismadb.blog.findMany({
     include: {
