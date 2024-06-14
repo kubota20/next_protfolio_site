@@ -1,6 +1,9 @@
-import prismadb from "@/lib/prismadb";
+// import prismadb from "@/lib/prismadb";
+
+import { PrismaClient } from "@prisma/client";
 import Container from "@/components/ui/container";
 import { CategoryClient } from "./components/client";
+const prismadb = new PrismaClient();
 
 const CategoriesPage = async () => {
   const catedories = await prismadb.category.findMany({
