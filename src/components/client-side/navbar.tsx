@@ -11,7 +11,12 @@ export const Navbar = () => {
       <div className="relative px-4 sm:px-6 lg:px-8 flex h-14 items-center justify-between">
         {/* ロゴ */}
         <Link href="/client">
-          <p className="font-bold text-xl italic">Portfolio</p>
+          <div className="flex flex-col">
+            <p className="font-bold text-xl italic">Portfolio</p>
+            <p className="text-[10px] text-gray-500">
+              - ポートフォリオページ -
+            </p>
+          </div>
         </Link>
 
         {/* メニューバー 640px以上で消えます */}

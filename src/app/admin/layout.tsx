@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/admin-side/navbar";
+import { ToasterProvider } from "@/providers/toast-provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   description: "クボタの管理者ページです",
 };
 
-export default function RootLayout({
+export default function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export default function RootLayout({
         <Navbar />
       </header>
       {children}
+      <ToasterProvider />
     </>
   );
 }

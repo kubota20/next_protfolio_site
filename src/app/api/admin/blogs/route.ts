@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { prismadb } from "@/lib/prisma";
+import prismadb from "@/lib/prismadb";
 
 // 渡す
 export async function POST(req: Request) {

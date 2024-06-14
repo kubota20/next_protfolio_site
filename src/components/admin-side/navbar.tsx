@@ -11,9 +11,9 @@ export const Navbar = () => {
       <div className="relative px-4 sm:px-6 lg:px-8 flex h-14 items-center justify-between">
         {/* ロゴ */}
         <Link href="/admin">
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col">
             <p className="font-bold text-xl italic">Dashboard</p>
-            <p className="text-xs text-gray-500">- 管理者ページ -</p>
+            <p className="text-xs text-gray-500 text-right">- 管理者ページ -</p>
           </div>
         </Link>
 

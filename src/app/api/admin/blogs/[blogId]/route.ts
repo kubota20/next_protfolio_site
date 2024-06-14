@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prismadb } from "@/lib/prisma";
+import prismadb from "@/lib/prismadb";
 
 // 取得
 export async function GET(

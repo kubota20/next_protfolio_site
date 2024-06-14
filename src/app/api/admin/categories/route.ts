@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { prismadb } from "@/lib/prisma";
+import prismadb from "@/lib/prismadb";
 
 // 渡す
 export async function POST(req: Request) {
@@ -29,6 +29,7 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   try {
     //　findMany 複数件取得
+
     const categories = await prismadb.category.findMany({});
 
     return NextResponse.json({ categories }, { status: 200 });
