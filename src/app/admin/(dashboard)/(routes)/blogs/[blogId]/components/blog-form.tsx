@@ -43,10 +43,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ImageUpload } from "@/components/ui/image-upload";
+import { Textarea } from "@/components/ui/textarea";
 
 const formScheme = z.object({
-  title: z.string().min(3, { message: "3文字以上を入力" }),
-  discription: z.string().min(3, { message: "3文字以上を入力" }),
+  title: z
+    .string()
+    .min(3, { message: "3文字以上を入力" })
+    .max(12, { message: "12文字以内を入力" }),
+  discription: z
+    .string()
+    .min(3, { message: "3文字以上を入力" })
+    .max(300, { message: "300文字以内を入力" }),
   link: z.string(),
   imageUrl: z.string(),
   categoryId: z.string(),
@@ -66,6 +74,9 @@ export const BlogForm: React.FC<BlogFormProps> = ({ data, categories }) => {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [descriptionCount, setDescriptionCount] = useState(
+    data ? data.discription : ""
+  );
 
   const title = data ? "Blog Change" : "Blog Create";
   const description = data
@@ -96,7 +107,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ data, categories }) => {
       setLoading(true);
       if (data) {
         // 変更
-        await axios.patch(`/api/admin/blogs/${params.categoryId}`, dataValue);
+        await axios.patch(`/api/admin/blogs/${params.blogId}`, dataValue);
       } else {
         // 作成
         await axios.post("/api/admin/blogs", dataValue);
@@ -193,10 +204,22 @@ export const BlogForm: React.FC<BlogFormProps> = ({ data, categories }) => {
                 <FormItem>
                   <FormLabel>Discription</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="説明" {...field} />
+                    <Textarea
+                      disabled={loading}
+                      placeholder="説明"
+                      {...field}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        setDescriptionCount(e.target.value);
+                      }}
+                    />
                   </FormControl>
-
-                  <FormMessage />
+                  <div className="flex items-center justify-between">
+                    <FormMessage />
+                    <span className="text-xs text-gray-500">
+                      {descriptionCount.length} / 300文字
+                    </span>
+                  </div>
                 </FormItem>
               )}
             />
@@ -223,12 +246,13 @@ export const BlogForm: React.FC<BlogFormProps> = ({ data, categories }) => {
               name="imageUrl"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>ImageUrl</FormLabel>
                   <FormControl>
-                    <Input
+                    <ImageUpload
+                      value={field.value ? [field.value] : []}
                       disabled={loading}
-                      placeholder="画像URL"
-                      {...field}
+                      onUploadSuccess={(url) => field.onChange(url)}
+                      onRemove={() => field.onChange("")}
                     />
                   </FormControl>
 
