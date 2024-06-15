@@ -19,7 +19,7 @@ export const BlogClient = ({ data }: BlogClientProps) => {
       <div className="flex items-center justify-between">
         <Heading
           title={`Blogs (${data.length})`}
-          description="カテゴリページにようこそ!"
+          description="ブログページにようこそ!"
         />
         <Button
           // new は [catedoryId] に入ります
