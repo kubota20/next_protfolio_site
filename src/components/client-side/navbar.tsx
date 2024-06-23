@@ -1,9 +1,10 @@
 "use client";
 
-import { MainNav } from "./main-nav";
-import Container from "@/components/ui/container";
 import Link from "next/link";
-import { MenuBar } from "./menu-bar";
+
+import { MainNav } from "@/components/client-side/main-nav";
+import { MenuBar } from "@/components/client-side/menu-bar";
+import Container from "@/components/ui/container";
 
 export const Navbar = () => {
   return (
@@ -12,7 +13,7 @@ export const Navbar = () => {
         {/* ロゴ */}
         <Link href="/client">
           <div className="flex flex-col">
-            <p className="font-bold text-xl italic">Portfolio</p>
+            <p className="font-bold text-xl italic font-serif">Portfolio</p>
             <p className="text-[10px] text-gray-500">
               - ポートフォリオページ -
             </p>

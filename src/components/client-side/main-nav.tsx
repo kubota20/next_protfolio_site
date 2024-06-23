@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+
+import { cn } from "@/lib/utils";
 
 export const MainNav = () => {
   const pathName = usePathname();
@@ -15,19 +15,14 @@ export const MainNav = () => {
       active: pathName === `/about`,
     },
     {
-      href: `/projects`,
-      label: "Projects",
-      active: pathName === `/projects`,
-    },
-    {
       href: `/blogs`,
       label: "Blogs",
       active: pathName === `/blogs`,
     },
     {
-      href: `/contact`,
-      label: "Contact",
-      active: pathName === `/contact`,
+      href: `/admin/login`,
+      label: "管理者",
+      active: pathName === `/admin/login`,
     },
   ];
 
@@ -38,7 +33,7 @@ export const MainNav = () => {
           key={route.href}
           href={route.href}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-black",
+            "text-sm font-medium transition-colors hover:text-black font-serif",
             route.active ? "text-black" : "text-neutral-500"
           )}
         >

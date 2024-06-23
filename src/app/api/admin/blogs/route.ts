@@ -60,6 +60,7 @@ export async function GET(req: Request) {
     const blogs = await prismadb.blog.findMany({
       where: {
         categoryId,
+        // trueだった場合公開する falseは非公開
         release: true,
       },
       include: {
@@ -74,7 +75,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json({ blogs }, { status: 201 });
   } catch (error) {
-    console.log("[BLOGS_POST]", error);
+    console.log("[BLOGS_GET]", error);
 
     return new NextResponse("Interal error", { status: 500 });
   }

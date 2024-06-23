@@ -1,12 +1,14 @@
 "use client";
 
-import { DataTable } from "@/components/admin-side/ui/data-teble";
-import { CategoryColumnProps, columns } from "./columns";
-import { Heading } from "@/components/admin-side/ui/heading";
-import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
+
+import { Plus } from "lucide-react";
+import { CategoryColumnProps, columns } from "./columns";
+
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Heading } from "@/components/admin-side/ui/heading";
+import { DataTable } from "@/components/admin-side/ui/data-teble";
 
 interface CategoryClientProps {
   data: CategoryColumnProps[];

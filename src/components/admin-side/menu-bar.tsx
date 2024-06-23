@@ -22,7 +22,7 @@ export const MenuBar = () => {
           <SheetHeader>
             <SheetTitle className="text-center">メニュー</SheetTitle>
           </SheetHeader>
-          <div className="my-4 grid grid-cols-1 gap-y-2">
+          <div className="my-4">
             <MainNav />
           </div>
         </SheetContent>

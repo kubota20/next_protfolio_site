@@ -1,9 +1,11 @@
 "use client";
 
-import { MainNav } from "./main-nav";
-import Container from "@/components/ui/container";
 import Link from "next/link";
-import { MenuBar } from "./menu-bar";
+
+import Container from "@/components/ui/container";
+
+import { MainNav } from "@/components/admin-side/main-nav";
+import { MenuBar } from "@/components/admin-side/menu-bar";
 
 export const Navbar = () => {
   return (

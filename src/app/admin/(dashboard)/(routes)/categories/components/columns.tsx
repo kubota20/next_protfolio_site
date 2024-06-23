@@ -1,8 +1,10 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
 import { ColumnDef } from "@tanstack/react-table";
+
 import { CellAction } from "./call-action";
+
+import { Checkbox } from "@/components/ui/checkbox";
 
 export type CategoryColumnProps = {
   id: string;

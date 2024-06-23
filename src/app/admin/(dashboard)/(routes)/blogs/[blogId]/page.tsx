@@ -1,5 +1,7 @@
 import prismadb from "@/lib/prismadb";
+
 import { BlogForm } from "./components/blog-form";
+
 import Container from "@/components/ui/container";
 
 const BlogPage = async ({ params }: { params: { blogId: string } }) => {

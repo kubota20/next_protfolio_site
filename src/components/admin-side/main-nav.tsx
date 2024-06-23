@@ -1,9 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+
+import { cn } from "@/lib/utils";
+
+import { LogoutButton } from "@/components/auth-button/logout-button";
 
 export const MainNav = () => {
   const pathName = usePathname();
@@ -27,7 +29,7 @@ export const MainNav = () => {
   ];
 
   return (
-    <nav className="mx-6 flex items-center space-x-4 lg:space-x-5">
+    <nav className="mx-6 flex items-center justify-center space-x-4 lg:space-x-5">
       {routes.map((route) => (
         <Link
           key={route.href}
@@ -40,6 +42,8 @@ export const MainNav = () => {
           {route.label}
         </Link>
       ))}
+
+      <LogoutButton />
     </nav>
   );
 };

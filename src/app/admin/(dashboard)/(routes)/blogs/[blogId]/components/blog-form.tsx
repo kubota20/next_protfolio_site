@@ -43,7 +43,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ImageUpload } from "@/components/ui/image-upload";
+import { ImageUpload } from "@/components/admin-side/ui/image-upload";
 import { Textarea } from "@/components/ui/textarea";
 
 const formScheme = z.object({

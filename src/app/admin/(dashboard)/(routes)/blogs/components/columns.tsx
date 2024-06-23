@@ -1,10 +1,12 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
+import toast from "react-hot-toast";
+
 import { ColumnDef } from "@tanstack/react-table";
-import { CellAction } from "./call-action";
 
 import { SquareChevronDown, SquareChevronUp, Copy } from "lucide-react";
+
+import { CellAction } from "./call-action";
 
 import {
   DropdownMenu,
@@ -13,8 +15,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import toast from "react-hot-toast";
 
 const onClickCopy = (text: string) => {
   navigator.clipboard.writeText(text);

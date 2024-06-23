@@ -1,11 +1,14 @@
 "use client";
 
-import { DataTable } from "@/components/admin-side/ui/data-teble";
+import { useRouter } from "next/navigation";
+
+import { Plus } from "lucide-react";
+
 import { BlogColumnProps, columns } from "./columns";
+
+import { DataTable } from "@/components/admin-side/ui/data-teble";
 import { Heading } from "@/components/admin-side/ui/heading";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 
 interface BlogClientProps {
