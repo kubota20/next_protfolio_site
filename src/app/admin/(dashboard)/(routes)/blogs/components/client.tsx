@@ -34,7 +34,7 @@ export const BlogClient = ({ data }: BlogClientProps) => {
 
       <Separator className="my-4" />
 
-      <DataTable searchKey="name" columns={columns} data={data} />
+      <DataTable searchKey="title" columns={columns} data={data} />
     </>
   );
 };
