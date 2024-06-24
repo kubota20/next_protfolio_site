@@ -6,7 +6,9 @@ export const getBlogs = async (): Promise<Blog[]> => {
   try {
     const res = await fetch(URL, {
       // SSR
-      cache: "no-store",
+      next: {
+        revalidate: 30,
+      },
     });
 
     if (!res.ok) {
