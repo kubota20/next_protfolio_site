@@ -7,7 +7,7 @@ import { BlogClient } from "./components/client";
 import Container from "@/components/ui/container";
 
 const BlogsPage = async () => {
-  const catedories = await prismadb.blog.findMany({
+  const blog = await prismadb.blog.findMany({
     include: {
       category: true, //カテゴリをもらう
     },
@@ -16,8 +16,8 @@ const BlogsPage = async () => {
     },
   });
 
-  // catedoriesにあるidとnameを取り出します
-  const formattedblogColumn = catedories.map((item) => ({
+  // blogにあるidとnameを取り出します
+  const formattedblogColumn = blog.map((item) => ({
     id: item.id,
     title: item.title,
     discription: item.discription,
