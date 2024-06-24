@@ -1,8 +1,10 @@
 import { Blog } from "@/types/types";
+import { getAbsoluteUrl } from "./get-absolute-url";
+import { IncomingMessage } from "http";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/admin/blogs`;
+export const getBlogs = async (req: IncomingMessage): Promise<Blog[]> => {
+  const URL = `${getAbsoluteUrl(req)}/api/admin/blogs`;
 
-export const getBlogs = async (): Promise<Blog[]> => {
   try {
     const res = await fetch(URL, {
       // SSR
