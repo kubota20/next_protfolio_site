@@ -8,7 +8,7 @@ export const authOptions = {
   adapter: PrismaAdapter(prismadb),
   ...authConfig,
 
-  secret: process.env.AUTH_SECRET as string,
+  secret: process.env.NEXTAUTH_SECRET as string,
 } satisfies NextAuthConfig;
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authOptions);

@@ -1,6 +1,6 @@
 import { Blog } from "@/types/types";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/admin/blogs`;
+const URL = `${process.env.NEXTAUTH_URL}/api/admin/blogs`;
 
 export const getBlogs = async (): Promise<Blog[]> => {
   const res = await fetch(URL, {
