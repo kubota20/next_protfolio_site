@@ -7,6 +7,8 @@ const nextConfig = {
       },
     ],
   },
+  // ビルドしてもソースマップが表示されるようにする
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;
