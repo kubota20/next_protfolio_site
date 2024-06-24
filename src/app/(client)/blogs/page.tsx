@@ -3,6 +3,8 @@ import { getBlogs } from "@/actions/get-blogs";
 import { BlogList } from "@/components/client-side/blog-list";
 import Container from "@/components/ui/container";
 
+export const revalidate = 10;
+
 const BlogsPage = async () => {
   const blogs = await getBlogs();
 

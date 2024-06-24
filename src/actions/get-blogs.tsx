@@ -5,10 +5,8 @@ const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/admin/blogs`;
 export const getBlogs = async (): Promise<Blog[]> => {
   try {
     const res = await fetch(URL, {
-      // ISR
-      next: {
-        revalidate: 30,
-      },
+      // SSR
+      cache: "no-store",
     });
 
     if (!res.ok) {
