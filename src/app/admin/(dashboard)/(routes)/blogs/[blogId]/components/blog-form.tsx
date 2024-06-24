@@ -182,7 +182,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ data, categories }) => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Title</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
